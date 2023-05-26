@@ -1,0 +1,15 @@
+.container {
+  overflow-x: auto;
+
+  .placeholder {
+    color: gray;
+    font-size: 24px;
+  }
+
+  .rows {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    min-width: 360px;
+  }
+}

@@ -3,6 +3,7 @@
 import {useEffect, useState} from 'react';
 import Repo from '@/components/Repo';
 import {useFavouritesStorage} from '@/components/FavouritesStorage';
+import styles from './ReposList.module.scss';
 
 export type Repository = {
   id: number,
@@ -33,12 +34,11 @@ export default function ReposList({favouritesOnly}: { favouritesOnly: boolean })
       });
   }, [favouritesOnly]);
 
-  return <ol>{
+  return <div className={styles.container}>{
     loading ?
-      <span>Loading...</span> :
-      error ? <div>Failed to load repositories data. Please try again later.</div> :
-        data.length ?
-          data.map(item => <li key={item.id}><Repo value={item}/></li>) :
-          <div>There is nothing here, yet</div>
-  }</ol>;
+      <div className={styles.placeholder}>...</div> :
+      error ? <div className={styles.placeholder}>Failed to load repositories data. Please try again later.</div> :
+        data.length ? <ol className={styles.rows}>{ data.map(item => <li key={item.id}><Repo value={item}/></li>)}</ol> :
+          <div className={styles.placeholder}>There is nothing here, yet</div>
+  }</div>;
 }

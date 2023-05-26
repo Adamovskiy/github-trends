@@ -10,6 +10,8 @@ import {usePathname} from 'next/navigation';
 import {clsIf, clss} from '@/utils/classes';
 import {ReactNode} from 'react';
 import {FavouritesStorageProvider} from '@/components/FavouritesStorage';
+import Image from 'next/image';
+import logo from 'public/logo.svg';
 
 const roboto = Roboto({
   weight: '400',
@@ -27,7 +29,10 @@ export default function RootLayout({children}: { children: ReactNode }) {
 
   return <html lang="en">
   <body className={roboto.className}>
-  <header>
+  <header className={styles.header}>
+    <div className={styles.logo}>
+      <Image src={logo} alt={'logo'} width={64}/>
+    </div>
     <nav className={styles.tabs}>
       <Link href="/" className={clss(styles.tab, clsIf(!favouritesActive, styles.active))}>GitHub Trends</Link>
       <Link href="/favourites/" className={clss(styles.tab, clsIf(favouritesActive, styles.active))}>My
