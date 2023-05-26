@@ -9,6 +9,7 @@ import {Metadata} from 'next';
 import {usePathname} from 'next/navigation';
 import {clsIf, clss} from '@/utils/classes';
 import {ReactNode} from 'react';
+import {FavouritesStorageProvider} from '@/components/FavouritesStorage';
 
 const roboto = Roboto({
   weight: '400',
@@ -34,7 +35,9 @@ export default function RootLayout({children}: { children: ReactNode }) {
     </nav>
   </header>
   <main className={styles.tabContent}>
-    {children}
+    <FavouritesStorageProvider>
+      {children}
+    </FavouritesStorageProvider>
   </main>
   </body>
   </html>;

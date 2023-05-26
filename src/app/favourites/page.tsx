@@ -1,3 +1,7 @@
+import ReposList from '@/components/ReposList';
+
 export default function Favourites() {
-  return <div>There is nothing here, yet</div>;
+  return <div>
+    <ReposList favouritesOnly={true}/>
+  </div>;
 }
