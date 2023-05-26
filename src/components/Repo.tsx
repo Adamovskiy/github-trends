@@ -7,7 +7,7 @@ import {clsIf, clss} from '@/utils/classes';
 export default function Repo({value}: { value: Repository }) {
   const {isFavourite, toggleFavourite} = useFavouritesStorage();
 
-  return <div className={styles.repoRow}>
+  return <div className={styles.repoRow} data-testid={"repoRow"}>
     <div className={styles.descriptionsCol}>
       <div>
         <h2 className={styles.title}>
