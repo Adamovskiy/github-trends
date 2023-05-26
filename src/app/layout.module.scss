@@ -1,0 +1,18 @@
+.tabs {
+  display: flex;
+  background-color: black;
+
+  .tab {
+    padding: 24px;
+    text-decoration: none;
+    color: white;
+
+    &.active {
+      background-color: gray;
+    }
+  }
+}
+
+.tabContent {
+  padding: 24px;
+}
