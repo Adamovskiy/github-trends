@@ -24,5 +24,6 @@ export async function GET(req: Request) {
     html_url: item.html_url,
     description: item.description,
     stargazers_count: item.stargazers_count,
+    language: item.language,
   })));
 }
